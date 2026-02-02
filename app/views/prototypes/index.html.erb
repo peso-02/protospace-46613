@@ -1,13 +1,12 @@
-<% if user_signed_in? %>
   <div class="main">
     <div class="inner">
-      <p class="greeting">
-        こんにちは、<%= link_to current_user.name, user_path(current_user) %>さん
-      </p>
-
+      <% if user_signed_in? %>
+        <p class="greeting">
+          こんにちは、<%= link_to current_user.name, user_path(current_user) %>さん
+        </p>
+      <% end%>
       <div class="card__wrapper">
         <%= render partial: 'prototype', collection: @prototypes %>
       </div>
     </div>
   </div>
-<% end %>
